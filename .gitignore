@@ -42,6 +42,9 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+# MacOS
+.DS_Store
+
 # Repo-specific
 test/tmp/*
 !test/tmp/exploded-epubs
