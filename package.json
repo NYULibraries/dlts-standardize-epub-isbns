@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dlts-open-square-standard-identifiers": "git+ssh://git@github.com:NYULibraries/dlts-open-square-standard-identifiers.git"
+  },
+  "devDependencies": {}
+}
