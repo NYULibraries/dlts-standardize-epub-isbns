@@ -25,7 +25,13 @@ clean
 
 setup
 
-node $SCRIPT
+node $SCRIPT $TMP_EXPLODED_EPUBS
+
+if [ $? -ne 0 ]
+then
+    echo 'FAIL: script failed to run'
+    exit 1
+fi
 
 diff --exclude .gitkeep -r $EXPECTED $TMP_EXPLODED_EPUBS
 
