@@ -3,9 +3,9 @@ const path = require( 'path' );
 
 const changeIsbn = require( './lib/change-isbn' );
 
-function main() {
-    const ISBN_MAP = require( './node_modules/dlts-open-square-standard-identifiers/map-of-nonstandard-isbns-to-standard-isbns.json' );
+const ISBN_MAP = require( './node_modules/dlts-open-square-standard-identifiers/map-of-nonstandard-isbns-to-standard-isbns.json' );
 
+function main() {
     const args = process.argv.slice( 2 );
 
     if ( args.length !== 1 ) {
@@ -24,20 +24,7 @@ function main() {
         error( `{ epubsDirectory } is not a directory.` );
     }
 
-    Object.keys( ISBN_MAP ).sort().forEach( nonstandardIsbn => {
-        let epubDirectory = path.join( epubsDirectory, nonstandardIsbn );
-        let stats;
-        try {
-            stats = fs.statSync( epubDirectory );
-            if ( stats.isDirectory() ) {
-                changeIsbn( epubDirectory, nonstandardIsbn, ISBN_MAP[ nonstandardIsbn ].libraryIsbn );
-            } else {
-                warning( `Skipping ${ epubDirectory } - not a directory` );
-            }
-        } catch ( e ) {
-            // Continue
-        }
-    } );
+    changeIsbn( epubsDirectory, ISBN_MAP );
 }
 
 function warning( warningMessage ) {
