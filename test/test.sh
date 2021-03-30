@@ -17,7 +17,6 @@ function clean() {
 }
 
 function setup() {
-    echo "Copying fixtures into tmp..."
     cp -pr $FIXTURES/* $TMP_EXPLODED_EPUBS/
 }
 
