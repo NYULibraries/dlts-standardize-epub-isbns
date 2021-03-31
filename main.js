@@ -1,7 +1,7 @@
 const fs = require( 'fs' );
 const path = require( 'path' );
 
-const changeIsbn = require( './lib/change-epub' );
+const standardizeEpubIsbns = require( './lib/standardize-epub-isbns' );
 
 const ISBN_MAP = require( './node_modules/dlts-open-square-standard-identifiers/map-of-nonstandard-isbns-to-standard-isbns.json' );
 
@@ -24,7 +24,7 @@ function main() {
         error( `{ epubsDirectory } is not a directory.` );
     }
 
-    changeIsbn( epubsDirectory, ISBN_MAP );
+    standardizeEpubIsbns( epubsDirectory, ISBN_MAP );
 }
 
 function error( errorMessage ) {
