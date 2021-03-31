@@ -1,7 +1,7 @@
 const fs = require( 'fs' );
 const path = require( 'path' );
 
-const changeIsbn = require( './lib/change-isbn' );
+const changeIsbn = require( './lib/change-epub' );
 
 const ISBN_MAP = require( './node_modules/dlts-open-square-standard-identifiers/map-of-nonstandard-isbns-to-standard-isbns.json' );
 
