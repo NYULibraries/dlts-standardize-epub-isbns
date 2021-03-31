@@ -27,10 +27,6 @@ function main() {
     changeIsbn( epubsDirectory, ISBN_MAP );
 }
 
-function warning( warningMessage ) {
-    console.error( `WARNING: ${ warningMessage }` );
-}
-
 function error( errorMessage ) {
     console.error( `ERROR: ${ errorMessage }` );
     usage();
