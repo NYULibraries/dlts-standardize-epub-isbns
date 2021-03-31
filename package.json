@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "dlts-open-square-standard-identifiers": "git+ssh://git@github.com:NYULibraries/dlts-open-square-standard-identifiers.git"
+    "dlts-open-square-standard-identifiers": "git+ssh://git@github.com:NYULibraries/dlts-open-square-standard-identifiers.git",
+    "replace-in-file": "^6.2.0"
   },
   "devDependencies": {}
 }
