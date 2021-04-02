@@ -1,5 +1,6 @@
 const fs = require( 'fs' );
 const path = require( 'path' );
+const process = require( 'process' );
 
 const standardizeEpubIsbns = require( './lib/standardize-epub-isbns' );
 
@@ -11,7 +12,7 @@ function main() {
         process.exit( 1 );
     }
 
-    const epubsDirectory = path.resolve( args[ 0 ] );
+    const epubsDirectory = path.resolve( process.cwd(), args[ 0 ] );
     let stats;
     try {
         stats = fs.statSync( epubsDirectory );
